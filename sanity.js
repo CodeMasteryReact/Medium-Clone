@@ -6,3 +6,9 @@ export const config = {
     apiVersion: "2021-10-21",
     useCdn: process.env.NOCE_DEV === "production",
 };
+
+export const sanityClient = createClient(config);
+
+export const urlFor = (source) => createImageUrlBuilder(config).image(source);
+
+export const useCurrentUser = createCurrentUserHook(config);
