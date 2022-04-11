@@ -1,0 +1,18 @@
+*[_type == "post" && slug.current == "anzhy-smooth"][0] {
+  _id,
+  _createdAt,
+  title,
+  author-> {
+  name,
+  image
+},
+'connects': *[
+  _type == "connect" &&
+  post.ref == ^._id &&
+  approved == true
+],
+  description,
+  mainImage,
+  slug,
+  body
+}
